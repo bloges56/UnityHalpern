@@ -47,7 +47,7 @@ public class MovementController : MonoBehaviour
 
     private void UpdateState()
     {
-        if(movement.x > 0)
+        if (movement.x > 0)
         {
             animator.SetInteger(animationState, (int)CharStates.walkEast);
         }
@@ -57,7 +57,9 @@ public class MovementController : MonoBehaviour
         }
         else if (movement.y > 0)
         {
+            Debug.Log("north");
             animator.SetInteger(animationState, (int)CharStates.walkNorth);
+            Debug.Log(animator.GetInteger(animationState));
         }
         else if (movement.y < 0)
         {
@@ -66,6 +68,7 @@ public class MovementController : MonoBehaviour
         else
         {
             animator.SetInteger(animationState, (int)CharStates.idleSouth);
+            Debug.Log(animator.GetInteger(animationState));
         }
     }
 }
