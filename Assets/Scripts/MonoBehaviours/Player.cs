@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class Player : Character
 {
+    public Inventory inventoryPrefab;
+
+    Inventory inventory;
+
     public HealthBar healthBarPrefab;
 
     HealthBar healthBar;
     private void Start()
     {
+        inventory = Instantiate(inventoryPrefab);
         hitPoints.value = startingHitPoints;
         healthBar = Instantiate(healthBarPrefab);
         healthBar.character = this;
@@ -24,7 +29,7 @@ public class Player : Character
                 switch(hitObject.itemType)
                 {
                     case Item.ItemType.COIN:
-                        shouldDisappear = true;
+                        shouldDisappear = inventory.AddItem(hitObject);
                         break;
                     case Item.ItemType.HEALTH:
                         shouldDisappear = AdjustHitPoints(hitObject.quantity);
