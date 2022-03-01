@@ -181,5 +181,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4dde3db0e1a39143a9f8a34b2889b90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitPoints: 5
+  hitPoints: {fileID: 11400000, guid: 177b2528d92fbad46861bfdc383ccacc, type: 2}
   maxHitPoints: 10
+  startingHitPoints: 6
+  inventoryPrefab: {fileID: 2908433321484503780, guid: fe2e51c4d807f0a4d99e15bf33af9076, type: 3}
+  healthBarPrefab: {fileID: 8954339767373959235, guid: baaf3939bbf33b74d959447d0087fa5f, type: 3}
